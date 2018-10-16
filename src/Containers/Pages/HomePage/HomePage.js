@@ -110,7 +110,7 @@ class HomePage extends Component {
      <NavBarLoggedOut logout={this.logout}/> 
        
      
-  
+
 
 </div>
      }
