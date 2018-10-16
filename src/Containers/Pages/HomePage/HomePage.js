@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 import LoginModal from '../../../Containers/Layouts/LoginModal'
 import SignUpModal from '../../../Containers/Layouts/SignUpModal'
-import {Link} from 'react-router-dom';
+//import {Link} from 'react-router-dom';
 
 import { validateUserAPI, signupAPI } from '../../../api/UserOpreations';
 
-import {Nav, Navbar, NavDropdown, NavItem,MenuItem} from 'react-bootstrap';
+//import {Nav, Navbar, NavDropdown, NavItem,MenuItem} from 'react-bootstrap';
 import NavBarLoggedIn from '../../../Components/NavBarLoggedIn';
 import NavBarLoggedOut from '../../../Components/NavBarLoggedOut';
 
@@ -21,7 +21,7 @@ class HomePage extends Component {
 
     }
     var value=sessionStorage.getItem('id');
-    if(value!=undefined){
+    if(value!==undefined){
     this.state.email=value;
     }
     this.closeLoginModal = this.closeLoginModal.bind(this);
@@ -104,7 +104,7 @@ class HomePage extends Component {
 
       <div>
         
-     { this.state.email !='' && this.state.email !=undefined &&
+     { this.state.email !=='' && this.state.email !==undefined &&
      <div>
      
      <NavBarLoggedOut logout={this.logout}/> 
@@ -115,7 +115,7 @@ class HomePage extends Component {
 </div>
      }
 
-{ this.state.email ==''  &&
+{ this.state.email ===''  &&
 <div>
 
   

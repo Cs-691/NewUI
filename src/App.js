@@ -7,6 +7,7 @@ import {BrowserRouter as Router, Route } from 'react-router-dom';
 
 import HomePage from './Containers/Pages/HomePage';
 import ProfilePage from './Containers/Pages/ProfilePage';
+import ChatWindow from './Containers/Pages/ChatWindow';
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
       
         <Route exact path='/' component={HomePage} />
         <Route exact path='/profile' component={ProfilePage} />
+        <Route exact path='/chat' component={ChatWindow} />
       
     
 
