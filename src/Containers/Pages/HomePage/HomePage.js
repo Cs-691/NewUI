@@ -10,6 +10,7 @@ import { validateUserAPI, signupAPI } from '../../../api/UserOpreations';
 import NavBarLoggedIn from '../../../Components/NavBarLoggedIn';
 import NavBarLoggedOut from '../../../Components/NavBarLoggedOut';
 
+
 class HomePage extends Component {
   constructor(props) {
     super(props);
@@ -21,7 +22,7 @@ class HomePage extends Component {
 
     }
     var value=sessionStorage.getItem('id');
-    if(value!==undefined){
+    if(value!==undefined && value!==null){
     this.state.email=value;
     }
     this.closeLoginModal = this.closeLoginModal.bind(this);
@@ -102,25 +103,25 @@ class HomePage extends Component {
 
     return (
 
-      <div>
+     <div>
         
      { this.state.email !=='' && this.state.email !==undefined &&
-     <div>
+   
      
      <NavBarLoggedOut logout={this.logout}/> 
        
      
 
-</div>
+
      }
 
 { this.state.email ===''  &&
-<div>
+
 
   
   <NavBarLoggedIn  signIn={this.openSignUpModal} login={this.openLoginModal}/>
 
-</div>
+
 
 
 }
@@ -133,7 +134,7 @@ class HomePage extends Component {
             {this.state.signUpModal === true && <SignUpModal
            callback={this.addUser} onClose={this.closeSignUpModal} />}
 
-      </div>
+    </div>
     )
   }
 }

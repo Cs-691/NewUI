@@ -48,7 +48,7 @@ OnLogin()
       <NavItem eventKey={2} href="/about">
         About
       </NavItem>
-      <NavItem eventKey={3} href="/d">
+      <NavItem eventKey={3} href="/chat">
         Diagnosis
       </NavItem>
       <NavItem eventKey={4} href="/contact">
