@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { Chat,addResponseMessage,addUserMessage } from 'react-chat-popup';
 
-import {getChatResponse} from '../../api/chatResponse';
+import {getChatResponse} from '../../api/ChatResponse';
 
 
 

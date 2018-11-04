@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Nav, Navbar, NavDropdown, NavItem,MenuItem} from 'react-bootstrap';
+import {Nav, Navbar, NavItem,MenuItem} from 'react-bootstrap';
 
 class NavBarLoggedIn extends Component {
     constructor(props) {
