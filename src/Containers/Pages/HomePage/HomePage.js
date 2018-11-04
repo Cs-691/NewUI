@@ -6,7 +6,7 @@ import { PageHeader, Image, Grid, Row, Col, FormControl, Button, Nav, NavItem } 
 import NavigationBar from '../../../Components/NavigationBar';
 
 
-import twitter from '../../../Assets/images/homebackground.jpeg'
+import home from '../../../Assets/images/homebackground.jpeg'
 class HomePage extends Component {
   constructor(props) {
     super(props);
@@ -41,7 +41,7 @@ class HomePage extends Component {
         <Grid>
           <Row>
             <Col>
-              <Image src={twitter} responsive />
+              <Image src={home} responsive />
 
 
               <div class="carousel-caption">
