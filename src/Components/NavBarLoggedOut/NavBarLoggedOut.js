@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Nav, Navbar, NavItem,MenuItem} from 'react-bootstrap';
-import { PropTypes } from 'react';
+
 class NavBarLoggedOut extends Component {
     constructor(props) {
       super(props);
@@ -48,7 +48,7 @@ this.props.logout();
   </Nav>
 
   <Nav pullRight>
-  <MenuItem onClick={this.OnLogout}  href='/' eventKey={1}>Logout</MenuItem>
+  <MenuItem onSelect={this.OnLogout}  href='/' eventKey={1}>Logout</MenuItem>
   <MenuItem href="/profile" eventKey={2}>Profile</MenuItem>
     
     

@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import {Glyphicon,Button} from 'react-bootstrap';
 
-import NavBarLoggedOut from '../../../Components/NavBarLoggedOut';
-
+import NavigationBar from '../../../Components/NavigationBar';
 
 
 class ContactPage extends Component {
@@ -24,7 +23,8 @@ class ContactPage extends Component {
         return (
 
             <div>
-                 <NavBarLoggedOut logout={this.logout}/> 
+                    <NavigationBar/>
+
 
                <section className="section">
 

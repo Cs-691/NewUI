@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import NavBarLoggedOut from '../../../Components/NavBarLoggedOut';
 
+import NavigationBar from '../../../Components/NavigationBar';
 class AboutPage extends Component {
 
     constructor(props) {
@@ -18,7 +18,7 @@ class AboutPage extends Component {
         return (
 
             <div>
-                 <NavBarLoggedOut logout={this.logout}/> 
+                <NavigationBar/>
                  </div>
         )
     }

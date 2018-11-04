@@ -1,8 +1,8 @@
 import React from "react";
-import Modal from 'react-modal';
+import {Modal,Button} from 'react-bootstrap';
 
 
-Modal.setAppElement('#root')
+//Modal.setAppElement('#root')
 class LoginModal extends React.Component {
 
     constructor(props) {
@@ -61,43 +61,33 @@ class LoginModal extends React.Component {
         });
     }
     render() {
-        const customStyles = {
-            content: {
-                top: '50%',
-                left: '50%',
-                right: 'auto',
-                bottom: 'auto',
-                marginRight: '-50%',
-                transform: 'translate(-50%, -50%)'
-            }
-        };
-
+       
         return (
             <div id="modalContainer">
-                <Modal
-                    isOpen
-                    onAfterOpen={this.afterOpenModal}
-                    onRequestClose={this.closeModal}
-                    contentLabel="Modal"
-                    style={customStyles}>
-
-                    <button onClick={this.closeModal}>close</button>
+               <Modal show="true" onHide={this.closeModal}>
+            <Modal.Header closeButton>
+            <Modal.Title>Log In </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
                     <div>Enter the following Information</div>
                    
                     <label>
                             Email:
                 <input  type="email" name="email" onChange={this.handleChange} value={this.state.email} />
                         </label>
-
+                        <br></br>
                         <label>
                             Password:
                 <input  type="password" name="password" onChange={this.handleChange}  value={this.state.password}/>
                         </label>
 
-                      
+                      <br></br>
                         <input type="submit" disabled={!this.handleValidation()} value="Submit" onClick={this.handleSubmit}/>
                         <input type="reset" value="Reset" onClick={this.clearData} />
-                    
+                        </Modal.Body>
+                    <Modal.Footer>
+            <Button onClick={this.handleClose}>Close</Button>
+          </Modal.Footer>
                 </Modal>
 
             </div>
