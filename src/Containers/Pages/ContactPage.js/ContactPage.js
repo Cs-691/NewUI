@@ -45,14 +45,14 @@ class ContactPage extends Component {
 
                                     <div className="col-md-6">
                                         <div className="md-form mb-0">
-                                            <input type="text" id="name" name="name" className="form-control" />
+                                            <input placeholder="john" type="text" id="name" name="name" className="form-control" />
                                             <label htmlFor="name" className="">Your name</label>
                                         </div>
                                     </div>
 
                                     <div className="col-md-6">
                                         <div className="md-form mb-0">
-                                            <input type="text" id="email" name="email" className="form-control" />
+                                            <input type="text" placeholder="xyz@gmail.com" id="email" name="email" className="form-control" />
                                             <label htmlFor='email' className="">Your email</label>
                                         </div>
                                     </div>
@@ -60,10 +60,17 @@ class ContactPage extends Component {
                                 </Row>
 
                                 <Row>
-                                    <div className="col-md-12">
+                                    <div className="col-md-6">
                                         <div className="md-form mb-0">
-                                            <input type="text" id="subject" name="subject" className="form-control" />
+                                            <input type="text"placeholder="query" id="subject" name="subject" className="form-control" />
                                             <label htmlFor="subject" className="">Subject</label>
+                                        </div>
+                                    </div>
+
+                                     <div className="col-md-6">
+                                        <div className="md-form mb-0">
+                                            <input type="text"placeholder="Apple" id="subject" name="company" className="form-control" />
+                                            <label htmlFor="company" className="">Company</label>
                                         </div>
                                     </div>
                                 </Row>
@@ -74,7 +81,7 @@ class ContactPage extends Component {
                                     <div className="col-md-12">
 
                                         <div className="md-form">
-                                            <textarea type="text" id="message" name="message" rows="2" className="form-control md-textarea"></textarea>
+                                            <textarea type="text" placeholder="Hi , I would like to" id="message" name="message" rows="2" className="form-control md-textarea"></textarea>
                                             <label htmlFor="message">Your message</label>
                                         </div>
 
