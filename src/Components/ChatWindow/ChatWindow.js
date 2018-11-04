@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import { Chat,addResponseMessage,addUserMessage,o } from 'react-chat-popup';
+import { Chat,addResponseMessage,addUserMessage } from 'react-chat-popup';
 
-import {getChatResponse} from '../../../api/chatResponse';
+import {getChatResponse} from '../../api/chatResponse';
 
 
 
@@ -11,6 +11,14 @@ import {getChatResponse} from '../../../api/chatResponse';
 const languages = [
   {
     name: 'C',
+    year: 1972
+  },
+  {
+    name: 'I am sick',
+    year: 1972
+  },
+  {
+    name: 'I am ill',
     year: 1972
   },
   {

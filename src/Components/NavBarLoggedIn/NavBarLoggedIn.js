@@ -59,7 +59,7 @@ OnLogin()
   
     <Nav pullRight>
     <MenuItem  onClick={this.OnLogin} eventKey={1}>Login</MenuItem>
-    <MenuItem onClick={this.OnsignIn} eventKey={2}>SignIn</MenuItem>
+    <MenuItem onClick={this.OnsignIn} eventKey={2}>Sign Up</MenuItem>
       
       
     </Nav>
