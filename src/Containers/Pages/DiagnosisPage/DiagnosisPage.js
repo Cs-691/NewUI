@@ -28,15 +28,17 @@ class DiagnosisPage extends Component {
 
  <Grid>
           <Row>
-          <Col lg={5}>
+          <Col lg={3}>
           <HowToUse/>
           </Col>    
 
-            <Col lg={5}>       
+            <Col lg={3}>       
         <ChatWindow/>
         </Col>
         </Row>
         </Grid>
+        <span style={{marginTop:'200px', marginLeft:'1050px', fontSize:'1em'}}><b>Click here to Start</b>
+            </span>
         </div>
         )
     }

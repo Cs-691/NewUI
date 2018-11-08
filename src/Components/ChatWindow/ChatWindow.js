@@ -1,49 +1,36 @@
 import React, { Component } from 'react';
 
 import { Chat,addResponseMessage,addUserMessage } from 'react-chat-popup';
-import { PageHeader, Grid, Row,Col ,Image,Panel,Button} from 'react-bootstrap';
 
 import {getChatResponse} from '../../api/ChatResponse';
+import { ListGroup, ListGroupItem } from 'react-bootstrap';
+
+
+const Symptoms=['fever',
+  'cough',
+  'sore throat',
+  'runny nose',
+  'stuffy nose',
+  'muscle ache',
+  'body ache',
+  'headache',
+  'fatigue',
+  'vomiting',
+  'nausea',
+  'diarrhea',
+  'congestion'
+  ]
 
 
 
-
-
-const languages = [
-  {
-    name: 'C',
-    year: 1972
-  },
-  {
-    name: 'I am sick',
-    year: 1972
-  },
-  {
-    name: 'I am ill',
-    year: 1972
-  },
-  {
-    name: 'C+',
-    year: 1972
-  },
-  {
-    name: 'yes',
-    year: 1972
-  },
-  {
-    name: 'Elm',
-    year: 2012
-  },
-  
-];
 
 // Teach Autosuggest how to calculate suggestions for any given input value.
 const getSuggestions = value => {
   const inputValue = value.trim().toLowerCase();
   const inputLength = inputValue.length;
 
-  return inputLength === 0 ? [] : languages.filter(lang =>
-    lang.name.toLowerCase().slice(0, inputLength) === inputValue
+  return inputLength === 0 ? [] : Symptoms.filter(lang =>
+    lang.toLowerCase().slice(0, inputLength) === inputValue
   );
 };
 
@@ -118,9 +105,14 @@ class ChatWindow extends Component {
     
     const { value, suggestions } = this.state;
 
-    var namesList = suggestions.map(function(name){
-      return <li>{name.name}</li>;
+    var suggestionsList = suggestions.map(function(name){
+      return <ListGroupItem>{name}</ListGroupItem>;
     })
+
+    var IntialsuggestionsList = Symptoms.slice(0,10).map(function(name){
+      return <ListGroupItem >{name}</ListGroupItem>;
+    })
+
 
     console.log("state",this.state.fullScreenModeActive)
 
@@ -128,14 +120,23 @@ class ChatWindow extends Component {
 
       <div>
       
+      
+      
         <Chat handleNewUserMessage={this.handleNewUserMessage}
         showCloseButton	={true}
      title={"illness predictior"}	
-     senderPlaceHolder={"type a message"}
+     senderPlaceHolder={"Type a message...."}
    // fullScreenMode={this.state.fullScreenModeActive}
 
         />
-      {namesList}
+
+        <div style={{width:'250px',marginLeft: '50px'}}>
+          <span><b>Symptom Suggestions</b></span>
+         
+      { suggestionsList.length>0 && suggestionsList}
+      { suggestionsList.length==0 && IntialsuggestionsList}
+     
+      </div>
       </div>
     )
   }
