@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import { Chat,addResponseMessage,addUserMessage } from 'react-chat-popup';
+import { PageHeader, Grid, Row,Col ,Image,Panel,Button} from 'react-bootstrap';
 
 import {getChatResponse} from '../../api/ChatResponse';
 
@@ -56,11 +57,12 @@ class ChatWindow extends Component {
     this.state = {
      
       value: '',
-      suggestions: []
+      suggestions: [],
+      fullScreenModeActive: false
 
     }
     this.handleNewUserMessage = this.handleNewUserMessage.bind(this);
-
+    this.enableFullScreen = this.enableFullScreen.bind(this);
     this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(this);
     
     
@@ -71,7 +73,11 @@ class ChatWindow extends Component {
       suggestions: getSuggestions(value)
     });
   };
-
+  enableFullScreen()
+  {
+      alert("here")
+      this.setState({ fullScreenModeActive: true });
+  }
  
   componentDidMount() {
    
@@ -116,17 +122,18 @@ class ChatWindow extends Component {
       return <li>{name.name}</li>;
     })
 
-
+    console.log("state",this.state.fullScreenModeActive)
 
     return (
 
       <div>
-        
+      
         <Chat handleNewUserMessage={this.handleNewUserMessage}
         showCloseButton	={true}
      title={"illness predictior"}	
-   //  fullScreenMode={true}
-        
+     senderPlaceHolder={"type a message"}
+   // fullScreenMode={this.state.fullScreenModeActive}
+
         />
       {namesList}
       </div>
