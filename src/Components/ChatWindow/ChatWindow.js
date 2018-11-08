@@ -124,7 +124,7 @@ class ChatWindow extends Component {
       
         <Chat handleNewUserMessage={this.handleNewUserMessage}
         showCloseButton	={true}
-     title={"illness predictior"}	
+     title={"Illness Predictior"}	
      senderPlaceHolder={"Type a message...."}
    // fullScreenMode={this.state.fullScreenModeActive}
 

@@ -86,7 +86,7 @@ class LoginModal extends React.Component {
                         <input type="reset" value="Reset" onClick={this.clearData} />
                         </Modal.Body>
                     <Modal.Footer>
-            <Button onClick={this.handleClose}>Close</Button>
+            <Button onClick={this.closeModal}>Close</Button>
           </Modal.Footer>
                 </Modal>
 
