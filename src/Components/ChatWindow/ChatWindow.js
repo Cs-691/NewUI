@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Chat,addResponseMessage,addUserMessage } from 'react-chat-popup';
 
 import {getChatResponse} from '../../api/ChatResponse';
-import { ListGroup, ListGroupItem } from 'react-bootstrap';
+import {  ListGroupItem } from 'react-bootstrap';
 
 
 const Symptoms=['fever',
@@ -134,7 +134,7 @@ class ChatWindow extends Component {
           <span><b>Symptom Suggestions</b></span>
          
       { suggestionsList.length>0 && suggestionsList}
-      { suggestionsList.length==0 && IntialsuggestionsList}
+      { suggestionsList.length===0 && IntialsuggestionsList}
      
       </div>
       </div>

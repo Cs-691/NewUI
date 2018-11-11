@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavigationBar from '../../../Components/NavigationBar';
-import { PageHeader, Grid, Row,Col ,Image,Panel,Button} from 'react-bootstrap';
+import { PageHeader, Grid, Row,Col } from 'react-bootstrap';
 import {HowToUse} from '../../../Components/HowToUse';
 
 import ChatWindow from '../../../Components/ChatWindow'
