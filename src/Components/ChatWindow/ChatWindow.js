@@ -1,25 +1,58 @@
 import React, { Component } from 'react';
 
-import { Chat,addResponseMessage,addUserMessage } from 'react-chat-popup';
+import { Chat, addResponseMessage,addUserMessage } from 'react-chat-popup';
 
-import {getChatResponse} from '../../api/ChatResponse';
-import {  ListGroupItem } from 'react-bootstrap';
+import { getChatResponse } from '../../api/ChatResponse';
+import { ListGroupItem } from 'react-bootstrap';
 
 
-const Symptoms=['fever',
-  'cough',
-  'sore throat',
-  'runny nose',
-  'stuffy nose',
-  'muscle ache',
-  'body ache',
-  'headache',
-  'fatigue',
-  'vomiting',
-  'nausea',
-  'diarrhea',
-  'congestion'
-  ]
+const Symptoms = ['fever',
+'itching',
+'skin_rash','nodal_skin_eruptions',
+'continuous_sneezing',
+'shivering',
+'chills',
+'joint_pain',
+'stomach_pain',
+'acidity',
+'ulcers_on_tongue',
+'muscle_wasting',
+'vomiting',
+'burning_micturition',
+'spotting_urination',
+'fatigue',
+'weight_gain',
+'anxiety',
+'cold_hands_and_feets',
+'mood_swings',
+'weight_loss',
+'restlessness',
+'lethargy',
+'patches_in_throat',
+'irregular_sugar_level',
+'cough',
+'high_fever',
+'sunken_eyes',
+'breathlessness',
+'sweating',
+'dehydration',
+'indigestion',
+'headache',
+'yellowish_skin',
+'dark_urine',
+'nausea',
+'loss_of_appetite',
+'pain_behind_the_eyes',
+'back_pain',
+'constipation',
+'abdominal_pain',
+'diarrhoea',
+'mild_fever',
+'yellow_urine',
+'yellowing_of_eyes',
+'acute_liver_failure','fluid_overload','swelling_of_stomach',
+
+]
 
 
 
@@ -42,101 +75,141 @@ class ChatWindow extends Component {
   constructor(props) {
     super(props);
     this.state = {
-     
+
       value: '',
       suggestions: [],
-      fullScreenModeActive: false
+      fullScreenModeActive: false,
+      userSymptoms: [],
 
     }
     this.handleNewUserMessage = this.handleNewUserMessage.bind(this);
     this.enableFullScreen = this.enableFullScreen.bind(this);
     this.onSuggestionsFetchRequested = this.onSuggestionsFetchRequested.bind(this);
-    
-    
+    this.sendSymptomsToBackEnd = this.sendSymptomsToBackEnd.bind(this);
+    this.handleOnClickfromSuggestion = this.handleOnClickfromSuggestion.bind(this);
+   
   }
 
-  onSuggestionsFetchRequested  ( value )  {
+  onSuggestionsFetchRequested(value) {
     this.setState({
       suggestions: getSuggestions(value)
     });
   };
-  enableFullScreen()
-  {
-      alert("here")
-      this.setState({ fullScreenModeActive: true });
+  enableFullScreen() {
+    alert("here")
+    this.setState({ fullScreenModeActive: true });
   }
- 
+
   componentDidMount() {
-   
+
     addResponseMessage("Welcome to this illness prediction system!");
     addResponseMessage("Lets get started,what is your name?");
   }
-
-  handleNewUserMessage(newMessage)
-  {
-    if(this.state.value===''){
-      console.log("listen got attached")
-      document.getElementById("chat").addEventListener("input", 
-      e => {
-        console.log(e.target.value)
-        this.setState({ value: e.target.value });
-        this.onSuggestionsFetchRequested( e.target.value);
-       // newText.value = e.target.value
-       //document.getElementById('autoComplete').select();
-      // document.getElementById('chat').focus();
-
-
-      })
+  sendSymptomsToBackEnd() {
+    let backendInput=this.state.userSymptoms;
    
-  }
-    getChatResponse(newMessage)
-    .then(data => {
-        addResponseMessage(data);
-    
-    })
-    .catch((err) => {
-      console.log(err);
-      addResponseMessage("Sorry! I didnt get this option!");
-    })
+    if(backendInput.length===1)
+    alert("please enter at least 1 symptom!")
+    else{
+      backendInput.shift();
+    alert("your symptom will go to our system:"+backendInput);
+    /*
+      getChatResponse(newMessage)
+      .then(data => {
+          addResponseMessage(data);
+      
+      })
+      .catch((err) => {
+        console.log(err);
+        addResponseMessage("Sorry! I didnt get this option!");
+      })
+      */
+    console.log("current symptoms", backendInput);
+    }
   }
 
+  handleNewUserMessage(newMessage) {
+    if (this.state.value === '') {
+
+      var parentNode = document.getElementById("chat").parentElement;
+
+      //create button dynamically.
+      var button = document.createElement("button");
+      button.innerHTML = "No more symptom";
+      button.id = "no-more-symptom"
+      button.style.cssText = 'background-color: rgb(244, 247, 249); border-radius: 5px;  text-align: left; height: auto;';
+      parentNode.appendChild(button);
+
+
+      //attach click event to send all symptoms to back-end
+      document.getElementById("no-more-symptom").addEventListener("click",
+        e => {
+          this.sendSymptomsToBackEnd();
+        })
+
+      //attach event to show symptom suggestion
+      document.getElementById("chat").addEventListener("input",
+        e => {
+          this.setState({ value: e.target.value });
+          this.onSuggestionsFetchRequested(e.target.value);
+
+        })
+
+    }
+  let currenSumptoms= this.state.userSymptoms;
+  currenSumptoms.push(newMessage) ;
+    this.setState({ userSymptoms: currenSumptoms});
+
+
+    addResponseMessage("do you have any  symptom?")
+    this.setState({ value: ''});
+    
+  }
+
+  handleOnClickfromSuggestion(text)
+  {
+    addUserMessage(text);
+    this.setState({ value: text },() => {
+      this.handleNewUserMessage(text)});
+    
+  }
 
   render() {
-    
+
     const { value, suggestions } = this.state;
-
-    var suggestionsList = suggestions.map(function(name){
-      return <ListGroupItem>{name}</ListGroupItem>;
+    let handleOnClickfromSuggestion=this.handleOnClickfromSuggestion;
+    var suggestionsList = suggestions.map(function (name) {
+      return <ListGroupItem key={name} onClick={() => handleOnClickfromSuggestion(name)}>{name}</ListGroupItem>;
     })
 
-    var IntialsuggestionsList = Symptoms.slice(0,10).map(function(name){
-      return <ListGroupItem >{name}</ListGroupItem>;
+    var IntialsuggestionsList = Symptoms.slice(0, 10).map(function (name) {
+      return <ListGroupItem key={name} onClick={() => handleOnClickfromSuggestion(name)}>{name}</ListGroupItem>;
     })
 
 
-    console.log("state",this.state.fullScreenModeActive)
+   // console.log("state", this.state.fullScreenModeActive)
 
     return (
 
       <div>
-      
-      
-      
+
+
+
         <Chat handleNewUserMessage={this.handleNewUserMessage}
-        showCloseButton	={true}
-     title={"Illness Predictior"}	
-     senderPlaceHolder={"Type a message...."}
-   // fullScreenMode={this.state.fullScreenModeActive}
+          showCloseButton={true}
+          title={"Illness Predictior"}
+          senderPlaceHolder={"Type a message...."}
+        // fullScreenMode={this.state.fullScreenModeActive}
 
         />
 
-        <div style={{width:'250px',marginLeft: '50px'}}>
+        <div style={{ width: '250px', marginLeft: '50px' }}>
           <span><b>Symptom Suggestions</b></span>
-         
-      { suggestionsList.length>0 && suggestionsList}
-      { suggestionsList.length===0 && IntialsuggestionsList}
-     
-      </div>
+
+          {suggestionsList.length > 0 && suggestionsList}
+          {suggestionsList.length === 0 && this.state.value === '' && IntialsuggestionsList}
+
+        </div>
       </div>
     )
   }
