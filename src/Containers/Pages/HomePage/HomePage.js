@@ -42,33 +42,31 @@ class HomePage extends Component {
 </PageHeader>
 
 
-        <Grid>
-          <Row>
-            <Col >
+       
 
               <Carousel>
                 <Carousel.Item>
-                  <img alt="900x500" src={home1} responsive />
+                  <img height={500} alt="900x500" src={home1} responsive />
                   <Carousel.Caption>
                     <h3>A CLEVER Person Solves a Problem. A WISE Person Avoids It!.</h3>
                   </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                  <img alt="900x500" src={home3} responsive />
+                  <img  height={500} alt="900x500" src={home3} responsive />
                 </Carousel.Item>
                 <Carousel.Item>
-                  <img alt="900x500" src={home2} responsive />
+                  <img height={500} alt="900x500" src={home2} responsive />
                   <Carousel.Caption>
                     <h3>When the heart is at ease, the body is healthy.</h3>
                   </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
-                  <img alt="900x500" src={home4} responsive />
+                  <img height={500} alt="900x500" src={home4} responsive />
                 </Carousel.Item>
                 <Carousel.Item>
-                  <img alt="900x500" src={home5} responsive />
+                  <img height={500} alt="900x500" src={home5} responsive />
                   <Carousel.Caption>
-                    <h3 style={{ color: 'black' }}>The foundation of success in life is good health.
+                    <h3 style={{ color: 'grey' }}>The foundation of success in life is good health.
                      A person cannot accumulate a fortune very well when he is sick.
                      </h3>
                   </Carousel.Caption>
@@ -76,10 +74,9 @@ class HomePage extends Component {
               </Carousel>
 
 
-            </Col>
-          </Row>
-
+           <Grid>
           <Row>
+            
 
             <PageHeader>
               <small>Let Me Identify What is Wrong!</small>
