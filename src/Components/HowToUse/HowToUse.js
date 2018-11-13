@@ -29,7 +29,7 @@ class HowToUse extends Component {
                         <ListGroup>
                             <ListGroupItem>1. Start by entering Name </ListGroupItem>
                             <ListGroupItem bsStyle="info">2. Enter Symptoms</ListGroupItem>
-                            <ListGroupItem>3. System will keep asking you for more symptoms till you click on button</ListGroupItem>
+                            <ListGroupItem>3. System will keep asking you for more symptoms till you click on <b>No more symtom </b>button</ListGroupItem>
                             <ListGroupItem bsStyle="info">4. See the output from our system.</ListGroupItem>
                             <ListGroupItem>5. Take Home remedies as suggested by our system </ListGroupItem>
                             <ListGroupItem bsStyle="info">6. Visit Again.</ListGroupItem>

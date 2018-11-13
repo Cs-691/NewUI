@@ -13,9 +13,7 @@ import about3 from '../../../Assets/images/about3.jpg'
 
 class AboutPage extends Component {
 
-    constructor(props) {
-        super(props);
-    }
+   
    
     
     render() {
