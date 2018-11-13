@@ -105,7 +105,7 @@ class SignUpModal extends React.Component {
                             Email:
                 <input type="email" name="email" onChange={this.handleChange} value={this.state.email} />
                         </label>
-
+                        <br></br>
                         <label>
                             Password:
                 <input type="password" name="password" onChange={this.handleChange} value={this.state.password} />
@@ -116,11 +116,45 @@ class SignUpModal extends React.Component {
                 <input type="password" name="cpassword" onChange={this.handleChange} value={this.state.cpassword} />
                         </label>
                         <br></br>
+
+                        <label>
+                            Smoking habits:
+<select name="smoke" onChange={this.handleChange} value={this.state.smoke}>
+                                <option value="no">No</option>
+                                <option value="yes">Yes</option>
+
+                            </select>
+                        </label>
+
+                        <br></br>
+
+                        <label>
+                            Smoking habits:
+<select name="smoke" onChange={this.handleChange} value={this.state.smoke}>
+                                <option value="no">No</option>
+                                <option value="yes">Yes</option>
+
+                            </select>
+                        </label>
+
+                        <br></br>
+
+                        <label>
+                            diabetes:
+<select name="diabetes" onChange={this.handleChange} value={this.state.diabetes}>
+                                <option value="no">No</option>
+                                <option value="yes">Yes</option>
+
+                            </select>
+                        </label>
+
+
+                        <br></br>
                         <input type="submit" disabled={!this.handleValidation()} value="Sign Up" onClick={this.handleSubmit} />
                         <input type="reset" value="Clear" onClick={this.clearData} />
                     </Modal.Body>
                     <Modal.Footer>
-            <Button onClick={this.closeModal}>Close</Button>
+                        <Button onClick={this.closeModal}>Close</Button>
                     </Modal.Footer>
                 </Modal>
 
