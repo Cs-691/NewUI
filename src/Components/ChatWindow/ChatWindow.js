@@ -5,7 +5,7 @@ import { Chat, addResponseMessage,addUserMessage } from 'react-chat-popup';
 import { getChatResponse } from '../../api/ChatResponse';
 import { ListGroupItem } from 'react-bootstrap';
 
-
+let i=0;
 const Symptoms = ['fever',
 'itching',
 'skin_rash','nodal_skin_eruptions',
@@ -108,10 +108,7 @@ class ChatWindow extends Component {
   sendSymptomsToBackEnd() {
     let backendInput=this.state.userSymptoms;
    
-    if(backendInput.length===1)
-    alert("please enter at least 1 symptom!")
-    else{
-      backendInput.shift();
+    
     alert("your symptom will go to our system:"+backendInput);
     /*
       getChatResponse(newMessage)
@@ -125,10 +122,11 @@ class ChatWindow extends Component {
       })
       */
     console.log("current symptoms", backendInput);
-    }
+    
   }
 
   handleNewUserMessage(newMessage) {
+    i++;
     if (this.state.value === '') {
 
       var parentNode = document.getElementById("chat").parentElement;
@@ -137,7 +135,7 @@ class ChatWindow extends Component {
       var button = document.createElement("button");
       button.innerHTML = "No more symptom";
       button.id = "no-more-symptom"
-      button.style.cssText = 'background-color: rgb(244, 247, 249); border-radius: 5px;  text-align: left; height: auto;';
+      button.style.cssText = 'background-color: rgb(163, 234, 247); border-radius: 5px;  text-align: left; height: auto;';
       parentNode.appendChild(button);
 
 
@@ -157,11 +155,23 @@ class ChatWindow extends Component {
 
     }
   let currenSumptoms= this.state.userSymptoms;
-  currenSumptoms.push(newMessage) ;
+ 
+   
+
+    if(i==1){
+    addResponseMessage("let us know name of the any  symptom you are experiencing ")
+    }
+    else if(i%2===1)
+    {
+     
+      addResponseMessage("do you have any other symptom?")
+    }
+    else
+    {
+      currenSumptoms.push(newMessage) ;
+      addResponseMessage("from how many days how you are experiencing this?")
+    }
     this.setState({ userSymptoms: currenSumptoms});
-
-
-    addResponseMessage("do you have any  symptom?")
     this.setState({ value: ''});
     
   }
