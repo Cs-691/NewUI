@@ -11,6 +11,7 @@ import DiagnosisPage from './Containers/Pages/DiagnosisPage';
 import AboutPage from './Containers/Pages/AboutPage';
 import ContactPage from './Containers/Pages/ContactPage.js';
 
+import FaqPage from './Containers/Pages/FaqPage'
 
 class App extends Component {
   render() {
@@ -25,6 +26,7 @@ class App extends Component {
         <Route exact path='/chat' component={DiagnosisPage} />
         <Route exact path='/about' component={AboutPage} />
         <Route exact path='/contact' component={ContactPage} />
+        <Route exact path='/faq' component={FaqPage} />
       
     
 
