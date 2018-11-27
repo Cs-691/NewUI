@@ -110,6 +110,8 @@ class ChatWindow extends Component {
    
     
     alert("your symptom will go to our system:"+backendInput);
+
+    //start from here
     /*
       getChatResponse(newMessage)
       .then(data => {
