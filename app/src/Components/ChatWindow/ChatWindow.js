@@ -111,6 +111,8 @@ class ChatWindow extends Component {
     
     alert("your symptom will go to our system:"+backendInput);
 
+    this.props.foundResult();
+
     //start from here
     /*
       getChatResponse(newMessage)
@@ -187,7 +189,7 @@ class ChatWindow extends Component {
   }
 
   render() {
-
+   
     const { value, suggestions } = this.state;
     let handleOnClickfromSuggestion=this.handleOnClickfromSuggestion;
     var suggestionsList = suggestions.map(function (name) {
