@@ -56,7 +56,7 @@ class FaqPage extends Component {
 
     return (
 
-      <div>
+      <div id="faqPage">
 
         <NavigationBar />
         <PageHeader>

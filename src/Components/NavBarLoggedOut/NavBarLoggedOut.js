@@ -44,6 +44,9 @@ this.props.logout();
     <NavItem eventKey={4} href="/contact">
       Contact
     </NavItem>
+    <NavItem eventKey={5} href="/faq">
+        Faq
+      </NavItem>
     
   </Nav>
 
