@@ -1,11 +1,11 @@
 import api from '../api';
 
-export async function getChatResponse (message) {
+export async function getChatResponse (symptoms) {
     const response = await api.request({
-      method: 'get',
+      method: 'post',
       baseURL: api.baseURL,
-      url: '/api/chat/response/'+message,
-      data: message,
+      url: '/api/chat/response/',
+      data: symptoms,
       headers: { 'Content-Type': 'application/json; charset=utf-8' }
     })
     return response.data

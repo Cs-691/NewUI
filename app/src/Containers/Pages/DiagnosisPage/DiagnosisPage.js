@@ -65,16 +65,22 @@ class DiagnosisPage extends Component {
         <ChatWindow foundResult={this.foundResult}/>
         </Col>
         </Row>
-      
+        </Grid>
         <span style={{marginTop:'200px', marginLeft:'1050px', fontSize:'1em'}}><b>Click here to Start</b>
         </span>
-      
-        <Button style={{marginTop:'20px', marginRight:'950px'}} bsStyle="info" onClick={this.refresh}>Start Fresh</Button>
-            
-           
+       
+      <div >
+        <Button  
+        
+        style={{ marginLeft:'100px'}}
+        bsStyle="info" onClick={this.refresh}>Start Fresh</Button>
+      {this.state.resultFound &&   <Button 
+        style={{ marginLeft:'120px', marginRight:'850px'}}
+      bsStyle="info" onClick={this.openModal}>See results</Button>   }
+           </div>
 
- <Row>
-{this.state.resultFound && <Button bsStyle="info" onClick={this.openModal}>See results</Button>}
+ 
+
  <Modal show={this.state.showModal} onHide={this.closeModal}>
             <Modal.Header closeButton>
             <Modal.Title>Illness Prediction </Modal.Title>
@@ -83,6 +89,17 @@ class DiagnosisPage extends Component {
                     <div>
                    
 Illness Predicted: <b>cold!</b>
+<br></br>
+Remedies : <b>
+
+    <ul>
+
+    <li>Gargling can moisten a sore throat and bring temporary relief. Gargle with half a teaspoon of salt dissolved in 8 oz warm water, four times daily.
+    </li><li>Hot liquids relieve nasal congestion, prevent dehydration, and soothe the uncomfortably inflamed membranes that line your nose and throat. If you're so congested that you can't sleep at night, try a hot toddy, an age-old remedy.
+    </li><li>Sleep with an extra pillow under your head. Elevating your head will help relieve congested nasal passages. 
+    </li>
+    </ul>
+</b>
 
                     </div>
                    
@@ -92,8 +109,8 @@ Illness Predicted: <b>cold!</b>
             <Button onClick={this.closeModal}>Close</Button>
           </Modal.Footer>
                 </Modal>
-                </Row>
- </Grid>
+               
+
         </div>
         )
     }

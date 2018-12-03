@@ -23,6 +23,7 @@ const Symptoms = ['fever',
 'fatigue',
 'weight_gain',
 'anxiety',
+'extra_marital_contacts',
 'cold_hands_and_feets',
 'mood_swings',
 'weight_loss',
@@ -111,20 +112,22 @@ class ChatWindow extends Component {
     
     alert("your symptom will go to our system:"+backendInput);
 
-    this.props.foundResult();
+   
 
     //start from here
-    /*
-      getChatResponse(newMessage)
+
+
+      getChatResponse(backendInput)
       .then(data => {
-          addResponseMessage(data);
+          alert(data);
+           //this.props.foundResult();
       
       })
       .catch((err) => {
         console.log(err);
         addResponseMessage("Sorry! I didnt get this option!");
       })
-      */
+      
     console.log("current symptoms", backendInput);
     
   }
