@@ -120,12 +120,12 @@ class ChatWindow extends Component {
       getChatResponse(backendInput)
       .then(data => {
           alert(data);
-           //this.props.foundResult();
+           this.props.foundResult(data);
       
       })
       .catch((err) => {
         console.log(err);
-        addResponseMessage("Sorry! I didnt get this option!");
+        addResponseMessage("Sorry! There is some problem, please check logs");
       })
       
     console.log("current symptoms", backendInput);
@@ -134,7 +134,7 @@ class ChatWindow extends Component {
 
   handleNewUserMessage(newMessage) {
     i++;
-    if (this.state.value === '') {
+    if (document.getElementById('no-more-symptom') == null) {
 
       var parentNode = document.getElementById("chat").parentElement;
 

@@ -14,7 +14,8 @@ class DiagnosisPage extends Component {
         super(props);
         this.state = {
 
-            resultFound:false
+            resultFound:false,
+            IllnessFound:''
           }
           this.closeModal = this.closeModal.bind(this);
           this.openModal = this.openModal.bind(this);
@@ -27,8 +28,11 @@ class DiagnosisPage extends Component {
         window.location.reload();
        // Location.reload(true);
     }
-    foundResult()
+    foundResult(data)
     {
+        this.setState({
+            IllnessFound: data
+        });
         
         this.setState({
             resultFound: true
@@ -88,7 +92,7 @@ class DiagnosisPage extends Component {
           <Modal.Body>
                     <div>
                    
-Illness Predicted: <b>cold!</b>
+Illness Predicted: <b>{this.state.IllnessFound}</b>
 <br></br>
 Remedies : <b>
 
