@@ -26,11 +26,7 @@ this.props.logout();
     
 
 <Navbar>
-  <Navbar.Header>
-    <Navbar.Brand>
-      <a href="/">Logo</a>
-    </Navbar.Brand>
-  </Navbar.Header>
+  
   <Nav>
     <NavItem eventKey={1} href="/">
       Home
