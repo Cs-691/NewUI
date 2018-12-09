@@ -15,7 +15,9 @@ class DiagnosisPage extends Component {
         this.state = {
 
             resultFound:false,
-            IllnessFound:''
+            responseData:''
+            
+           
           }
           this.closeModal = this.closeModal.bind(this);
           this.openModal = this.openModal.bind(this);
@@ -31,7 +33,7 @@ class DiagnosisPage extends Component {
     foundResult(data)
     {
         this.setState({
-            IllnessFound: data
+            responseData: data
         });
         
         this.setState({
@@ -92,17 +94,13 @@ class DiagnosisPage extends Component {
           <Modal.Body>
                     <div>
                    
-Illness Predicted: <b>{this.state.IllnessFound}</b>
+Illness Predicted: <b>{this.state.responseData.illness}</b>
+<br></br>
+Illness probability: <b>{this.state.responseData.probability}</b>
 <br></br>
 Remedies : <b>
-
-    <ul>
-
-    <li>Gargling can moisten a sore throat and bring temporary relief. Gargle with half a teaspoon of salt dissolved in 8 oz warm water, four times daily.
-    </li><li>Hot liquids relieve nasal congestion, prevent dehydration, and soothe the uncomfortably inflamed membranes that line your nose and throat. If you're so congested that you can't sleep at night, try a hot toddy, an age-old remedy.
-    </li><li>Sleep with an extra pillow under your head. Elevating your head will help relieve congested nasal passages. 
-    </li>
-    </ul>
+{this.state.responseData.remedy}
+    
 </b>
 
                     </div>

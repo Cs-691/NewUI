@@ -119,7 +119,7 @@ class ChatWindow extends Component {
 
       getChatResponse(backendInput)
       .then(data => {
-          alert(data);
+        console.log(data);
            this.props.foundResult(data);
       
       })
@@ -185,9 +185,15 @@ class ChatWindow extends Component {
 
   handleOnClickfromSuggestion(text)
   {
+    
+    if (document.getElementById('no-more-symptom') != null) {
     addUserMessage(text);
     this.setState({ value: text },() => {
       this.handleNewUserMessage(text)});
+      
+
+    }
+    
     
   }
 
