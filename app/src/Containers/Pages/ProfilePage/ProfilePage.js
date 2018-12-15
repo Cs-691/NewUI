@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
-
-
 import { getUserAPI ,updateAPI} from '../../../api/UserOpreations';
-import NavBarLoggedOut from '../../../Components/NavBarLoggedOut';
+import NavigationBar from '../../../Components/NavigationBar';
 
 
 class ProfilePage extends Component {
     constructor(props) {
         super(props);
+        if(sessionStorage.getItem('id')==undefined ||sessionStorage.getItem('id')==null )
+        {
+            alert("You must log in first")
+            window.location.href = 'http://localhost:3000';
+
+        }
+
+
+
         var id = sessionStorage.getItem('id');
       //  alert(id);
         this.state = { fname: '', lname: '', email: '', gender: 'male', password: '', npassword: '', age: '' }
@@ -86,7 +93,7 @@ class ProfilePage extends Component {
         return (
            
             <div>
- <NavBarLoggedOut logout={this.logout}/> 
+<NavigationBar></NavigationBar>
                 <label>
                     First Name:
                 <input type="text" name="fname" onChange={this.handleChange} value={this.state.fname} />

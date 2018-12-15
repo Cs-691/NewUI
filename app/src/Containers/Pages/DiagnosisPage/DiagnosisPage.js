@@ -12,6 +12,13 @@ class DiagnosisPage extends Component {
 
     constructor(props) {
         super(props);
+        if(sessionStorage.getItem('id')==undefined ||sessionStorage.getItem('id')==null )
+        {
+            alert("You must log in first")
+            window.location.href = 'http://localhost:3000';
+
+        }
+
         this.state = {
 
             resultFound:false,
