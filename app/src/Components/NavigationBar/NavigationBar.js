@@ -18,13 +18,18 @@ class NavigationBar extends Component {
       email:'',
       loginModal: false, 
       signUpModal:false,
+      name:''
     
 
     }
     var value=sessionStorage.getItem('id');
+    var name=sessionStorage.getItem('name');
     if(value!==undefined && value!==null){
     this.state.email=value;
     }
+    if(name!==undefined && name!==null){
+      this.state.name=name;
+      }
     this.closeLoginModal = this.closeLoginModal.bind(this);
     this.closeSignUpModal = this.closeSignUpModal.bind(this);
 
@@ -47,8 +52,11 @@ class NavigationBar extends Component {
         .then(data => {
           this.closeLoginModal();
           console.log(data);
+          this.setState({ name: data });
           this.setState({ email: param.email });
+          sessionStorage.setItem('name',data);
           sessionStorage.setItem('id',param.email);
+         
         })
         .catch((err) => {
           console.log(err);
@@ -61,12 +69,14 @@ class NavigationBar extends Component {
     
     signupAPI(JSON.stringify(param))
     .then(data => {
+      this.setState({ name: data });
       this.setState({ email: param.email });
       this.closeSignUpModal();
       console.log(data);
-     //goto profile page
+     
 
      sessionStorage.setItem('id',param.email);
+     sessionStorage.setItem('name',data);
     })
     .catch((err) => {
       console.log(err);
@@ -93,12 +103,14 @@ class NavigationBar extends Component {
     {
       this.setState({ email: '' });
       sessionStorage.removeItem('id');
+      sessionStorage.removeItem('name');
       alert("Logged out!")
     }
 
 
   render() {
     
+    console.log(this.state.name);
 
 
     return (
@@ -108,7 +120,7 @@ class NavigationBar extends Component {
      { this.state.email !=='' && this.state.email !==undefined &&
    
      
-     <NavBarLoggedOut logout={this.logout}/> 
+     <NavBarLoggedOut name={this.state.name} logout={this.logout}/> 
        
      
 

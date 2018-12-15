@@ -4,14 +4,17 @@ import {Nav, Navbar, NavItem,MenuItem} from 'react-bootstrap';
 class NavBarLoggedOut extends Component {
     constructor(props) {
       super(props);
+      
       this.state = {
+        name:''
       }
       this.OnLogout = this.OnLogout.bind(this);
       
     }
-
-
-
+componentDidMount()
+{
+  this.setState({ name: this.props.name });
+}
     OnLogout()
     {
 this.props.logout();
@@ -48,7 +51,7 @@ this.props.logout();
 
   <Nav pullRight>
   <MenuItem onSelect={this.OnLogout}  href='/' eventKey={1}>Logout</MenuItem>
-  <MenuItem href="/profile" eventKey={2}>Profile</MenuItem>
+  <MenuItem href="/profile" eventKey={2}>{this.state.name} 's Profile</MenuItem>
     
     
   </Nav>

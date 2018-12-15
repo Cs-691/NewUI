@@ -29,6 +29,7 @@ class ProfilePage extends Component {
     {
       this.setState({ email: '' });
       sessionStorage.removeItem('id');
+      sessionStorage.removeItem('name')
       alert("Logged out!")
     }
     updateUser() {
