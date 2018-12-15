@@ -10,15 +10,40 @@ class ContactPage extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {name:'',email:'',subject:'',message:'',company:''}
         this.sendEmail = this.sendEmail.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
     logout() {
         this.setState({ email: '' });
         sessionStorage.removeItem('id');
+        sessionStorage.removeItem('name');
         alert("Logged out!")
     }
     sendEmail() {
+        console.log(this.state);
+/*
+        var link = "mailto:nrvshah06@gmail.com"
+             + "&subject=" + escape(this.state.subject)
+             + "&body=" + escape(this.state.message)+ "\n Company   "+escape(this.state.company)
+             + "\n from:"+this.state.name+" "+this.state.email;
+    ;
+*/
+var link = "mailto:me@example.com"
+             + "&subject=" + escape("This is my subject")
+             + "&body=" + escape("aa")
+    ;
+   // window.location.href = link;
 
+    }
+    handleChange(event) {
+        const target = event.target;
+        const value =target.type === 'checkbox' ? target.checked : target.value;
+        const name = target.name;
+
+        this.setState({
+            [name]: value
+        });
     }
     render() {
         return (
@@ -45,14 +70,20 @@ class ContactPage extends Component {
 
                                     <div className="col-md-6">
                                         <div className="md-form mb-0">
-                                            <input placeholder="john" type="text" id="name" name="name" className="form-control" />
+                                            <input value={this.state.name} 
+                                             onChange={this.handleChange}
+                                            placeholder="john" type="text" 
+                                            id="name" name="name" className="form-control" />
                                             <label htmlFor="name" className="">Your name</label>
                                         </div>
                                     </div>
 
                                     <div className="col-md-6">
                                         <div className="md-form mb-0">
-                                            <input type="text" placeholder="xyz@gmail.com" id="email" name="email" className="form-control" />
+                                            <input  value={this.state.email}
+                                             onChange={this.handleChange}
+                                            type="email" placeholder="xyz@gmail.com" 
+                                            id="email" name="email" className="form-control" />
                                             <label htmlFor='email' className="">Your email</label>
                                         </div>
                                     </div>
@@ -62,14 +93,20 @@ class ContactPage extends Component {
                                 <Row>
                                     <div className="col-md-6">
                                         <div className="md-form mb-0">
-                                            <input type="text"placeholder="query" id="subject" name="subject" className="form-control" />
+                                            <input value={this.state.subject}
+                                             onChange={this.handleChange}
+                                             type="text"placeholder="query" id="subject" name="subject"
+                                              className="form-control" />
                                             <label htmlFor="subject" className="">Subject</label>
                                         </div>
                                     </div>
 
                                      <div className="col-md-6">
                                         <div className="md-form mb-0">
-                                            <input type="text"placeholder="Apple" id="subject" name="company" className="form-control" />
+                                            <input value={this.state.company} 
+                                             onChange={this.handleChange}
+                                            type="text"placeholder="Apple" id="company"
+                                             name="company" className="form-control" />
                                             <label htmlFor="company" className="">Company</label>
                                         </div>
                                     </div>
@@ -81,7 +118,9 @@ class ContactPage extends Component {
                                     <div className="col-md-12">
 
                                         <div className="md-form">
-                                            <textarea type="text" placeholder="Hi , I would like to" id="message" name="message" rows="2" className="form-control md-textarea"></textarea>
+                                            <textarea value={this.state.message} 
+                                             onChange={this.handleChange}
+                                            type="text" placeholder="Hi , I would like to" id="message" name="message" rows="2" className="form-control md-textarea"></textarea>
                                             <label htmlFor="message">Your message</label>
                                         </div>
 
@@ -116,7 +155,7 @@ class ContactPage extends Component {
                                     <Button>
                                         <Glyphicon glyph="envelope" />
                                     </Button>
-                                    <p>contact@mdbootstrap.com</p>
+                                    <p>contact@mdbootstrap=.com</p>
 
                                 </li>
                             </ul>
