@@ -38,11 +38,22 @@ class SignUpModal extends React.Component {
 
     handleSubmit() {
         let data = this.state;
+        if(this.state.password !== this.state.cpassword)
+        {
+alert("password should match!")
+        }
+        else{
         this.props.callback(data);
+        }
     }
     handleValidation() {
         //make sure all the properties are non empty
-        const valid = (this.state.email !== '' && this.state.password !== '');
+        const valid = (this.state.email !== '' && this.state.password !== '' &&
+        
+        this.state.age !== '' && this.state.fname !== '' && 
+
+        this.state.lname !== '' && this.state.password !== ''
+        );
         return valid;
     }
 
