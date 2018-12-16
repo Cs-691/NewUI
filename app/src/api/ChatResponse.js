@@ -10,3 +10,13 @@ export async function getChatResponse (symptoms) {
     })
     return response.data
   }
+
+  export async function getRemediesAPI (illness) {
+    const response = await api.request({
+      method: 'get',
+      baseURL: api.baseURL,
+      url: '/api/user/getRemedies/'+illness,
+      headers: { 'Content-Type': 'application/json; charset=utf-8' }
+    })
+    return response.data
+  }
