@@ -74,6 +74,7 @@ class ChatWindow extends Component {
       getChatResponse(backendInput)
       .then(data => {
         console.log(data);
+        alert("Processing done!click on see results button!")
            this.props.foundResult(data);
       
       })
@@ -141,7 +142,7 @@ class ChatWindow extends Component {
   handleOnClickfromSuggestion(text)
   {
     
-    if (document.getElementById('no-more-symptom') != null) {
+    if (document.getElementById('chat') != null) {
     addUserMessage(text);
     this.setState({ value: text },() => {
       this.handleNewUserMessage(text)});
