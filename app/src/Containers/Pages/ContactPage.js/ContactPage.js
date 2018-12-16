@@ -154,8 +154,13 @@ var link = "mailto:me@example.com"
                                 <li>
                                     <Button>
                                         <Glyphicon glyph="envelope" />
-                                    </Button>
-                                    <p>contact@mdbootstrap=.com</p>
+                                    </Button><br></br>
+                                    <a 
+                                    style={{
+                                        color: 'black',
+                                       
+                                      }}
+                                    href="mailto:ids@gmail.com" targ="blank">IDS@gmail.com</a>
 
                                 </li>
                             </ul>

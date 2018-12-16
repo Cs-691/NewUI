@@ -20,6 +20,7 @@ Primary style
   font-size: 100%;
   font-family: "Open Sans", sans-serif;
   color: #4e5359;
+  background-color: hsl(0, 0%, 94%);
   
 }
 #faqPage::after {
@@ -29,7 +30,7 @@ Primary style
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(78, 83, 89, 0.8);
+  background-color: #4e5359cc;
   visibility: hidden;
   opacity: 0;
   -webkit-transition: opacity .3s 0s, visibility 0s .3s;
@@ -50,8 +51,7 @@ Primary style
 }
 
 a {
-  color:  rgb(53, 204, 230);
-  text-decoration: none;
+  color:  #009ACD;
 }
 
 /* -------------------------------- 
@@ -72,6 +72,10 @@ header h1 {
   -moz-osx-font-smoothing: grayscale;
   font-size: 20px;
   font-size: 1.25rem;
+}
+
+.pageheader{
+  border-bottom: 1px solid hsl(0, 0%, 90%);
 }
 @media only screen and (min-width: 1024px) {
   header {
@@ -110,13 +114,14 @@ header h1 {
   height: 50px;
   line-height: 50px;
   padding: 0 28px 0 16px;
-  background-color: #4e5359;
+  background-color: #29b1c2;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #ffffff;
   white-space: nowrap;
-  border-bottom: 1px solid #555b61;
+  border-bottom: 1px solid #29b1c2;
   text-overflow: ellipsis;
+  border-radius: 8px;
 }
 .cd-faq-categories a::before, .cd-faq-categories a::after {
   /* plus icon on the right */
@@ -126,7 +131,7 @@ header h1 {
   display: inline-block;
   height: 1px;
   width: 10px;
-  background-color: #7f868e;
+  background-color: #666970;
 }
 .cd-faq-categories a::after {
   -webkit-transform: rotate(90deg);
@@ -156,7 +161,9 @@ header h1 {
     display: none;
   }
   .no-touch .cd-faq-categories a:hover {
+    text-decoration: none;
     background: #555b61;
+    color: #23527c;
   }
   .no-js .cd-faq-categories {
     width: 100%;
@@ -168,7 +175,7 @@ header h1 {
     position: absolute;
     top: 0;
     left: 0;
-    width: 200px;
+    width: 325px;
     z-index: 2;
   }
   .cd-faq-categories a::before {
@@ -179,14 +186,15 @@ header h1 {
     left: 0;
     height: 100%;
     width: 3px;
-    background-color:  rgb(53, 204, 230);
+    background-color:  #0D4F8B;
     opacity: 0;
     -webkit-transition: opacity 0.2s;
     -moz-transition: opacity 0.2s;
     transition: opacity 0.2s;
   }
   .cd-faq-categories .selected {
-    background: #42464b !important;
+    background: #7edcdc !important;
+    color:#162252;
   }
   .cd-faq-categories .selected::before {
     opacity: 1;
@@ -299,12 +307,13 @@ header h1 {
     display: block;
   }
   .cd-faq-group > li {
-    background: #ffffff;
+    background: rgb(221, 221, 221);
     margin-bottom: 6px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
     -webkit-transition: box-shadow 0.2s;
     -moz-transition: box-shadow 0.2s;
     transition: box-shadow 0.2s;
+    border-radius: 8px;
   }
   
   .cd-faq-group .cd-faq-title {
@@ -320,7 +329,7 @@ header h1 {
   display: block;
   margin: 1.6em 0 .4em;
   line-height: 1.2;
-  background-color: #f3f3f5;
+  background-color: #fff;
 }
 @media only screen and (min-width: 768px) {
   .cd-faq-trigger {
@@ -328,7 +337,8 @@ header h1 {
     font-weight: 300;
     margin: 0;
     padding: 24px 72px 24px 24px;
-    background-color: #f3f3f5;
+    background-color: #fff;
+    border-radius: 8px;
   }
   .cd-faq-trigger::before, .cd-faq-trigger::after {
     /* arrow icon on the right */
@@ -345,7 +355,7 @@ header h1 {
     transition-property: transform;
     -webkit-transition-duration: 0.2s;
     -moz-transition-duration: 0.2s;
-    transition-duration: 0.2s;
+    transition-duration: 0.2s;  
   }
   .cd-faq-trigger::before {
     -webkit-transform: rotate(45deg);

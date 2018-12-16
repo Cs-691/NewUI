@@ -34,7 +34,7 @@ class HomePage extends Component {
   }
 
   getRemedies(illness) {
-    alert(illness);
+    //alert(illness);
     this.setState({ illness: illness });
     getRemediesAPI(illness)
       .then(data => {
