@@ -91,7 +91,7 @@ header h1 {
 .cd-faq {
   width: 90%;
   max-width: 1024px;
-  margin: 2em auto;
+  ;
  
 }
 .cd-faq:after {
@@ -102,7 +102,7 @@ header h1 {
 @media only screen and (min-width: 768px) {
   .cd-faq {
     position: relative;
-    margin: 4em auto;
+    margin: 0em auto;
     box-shadow: none;
   }
 }

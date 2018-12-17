@@ -33,14 +33,7 @@ class FaqPage extends Component {
 		});
 	}
 	componentDidMount() {
-		var tag = document.createElement("script");
-		tag.async = false;
-		tag.src = "https://code.jquery.com/jquery-3.3.1.js";
-		document.head.appendChild(tag);
-
-		tag.src =
-			" https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.js";
-		document.head.appendChild(tag);
+		
 	}
 
 	render() {
