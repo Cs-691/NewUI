@@ -356,17 +356,8 @@ class FaqPage extends Component {
 								{this.state.show12 && (
 									<div className="cd-faq-content::after">
 										<p style={customStyles}>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-											Impedit quidem delectus rerum eligendi mollitia,
-											repudiandae quae beatae. Et repellat quam atque corrupti
-											iusto architecto impedit explicabo repudiandae qui
-											similique aut iure ipsum quis inventore nulla error
-											aliquid alias quia dolorem dolore, odio excepturi veniam
-											odit veritatis. Quo iure magnam, et cum. Laudantium, eaque
-											non? Tempore nihil corporis cumque dolor ipsum accusamus
-											sapiente aliquid quis ea assumenda deserunt praesentium
-											voluptatibus, accusantium a mollitia necessitatibus
-											nostrum voluptatem numquam modi ab, sint rem.
+											We take all the symptoms entered by you,your personal data and pass those
+											into our prediction model, Which in turn will return illness you might have and remedies for the same.
 										</p>
 									</div>
 								)}
@@ -388,17 +379,8 @@ class FaqPage extends Component {
 								{this.state.show13 && (
 									<div className="cd-faq-content::after">
 										<p style={customStyles}>
-										The Content isn't proposed to be a substitute for expert restorative guidance, determination, 
-										or treatment. Continuously look for the counsel of your doctor or other qualified wellbeing supplier 
-										with any inquiries you may have in regards to a therapeutic condition. Never dismiss proficient 
-										medicinal counsel or deferral in looking for it as a result of something you have perused on Illness 
-										prediction Site! <br></br>
-										In the event that you figure you may have a therapeutic crisis, call your specialist or 911 
-										instantly. Sickness diagnosis Site does not prescribe or embrace an explicit tests, doctors, 
-										items, methodology, suppositions, or other data that might be referenced on the Site. Dependence
-										on any data given by Illness prediction Site, Illness diagnosis Site representatives, others showing
-										up on the Site at the welcome of Illness diagnosis Site, or different guests to the Site is
-										exclusively at your very own hazard. 
+										We are continuously testing and training our algorithm model.
+										it is expected to have accuracy between 0.8 - 1.0.
  
 										</p>
 									</div>
@@ -445,23 +427,7 @@ class FaqPage extends Component {
 								{this.state.show15 && (
 									<div className="cd-faq-content::after">
 										<p style={customStyles}>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-											Nisi tempore, placeat quisquam rerum! Eligendi fugit
-											dolorum tenetur modi fuga nisi rerum, autem officiis
-											quaerat quos. Magni quia, quo quibusdam odio. Error magni
-											aperiam amet architecto adipisci aspernatur! Officia,
-											quaerat magni architecto nostrum magnam fuga nihil, ipsum
-											laboriosam similique voluptatibus facilis nobis? Eius non
-											asperiores, nesciunt suscipit veniam blanditiis veritatis
-											provident possimus iusto voluptas, eveniet architecto
-											quidem quos molestias, aperiam eum reprehenderit dolores
-											ad deserunt eos amet. Vero molestiae commodi unde dolor
-											dicta maxime alias, velit, nesciunt cum dolorem, ipsam
-											soluta sint suscipit maiores mollitia assumenda ducimus
-											aperiam neque enim! Quas culpa dolorum ipsam? Ipsum
-											voluptatibus numquam natus? Eligendi explicabo eos,
-											perferendis voluptatibus hic sed ipsam rerum maiores
-											officia! Beatae, molestias!
+											You can enter those values when you sign up for the system.
 										</p>
 									</div>
 								)}
@@ -483,11 +449,8 @@ class FaqPage extends Component {
 								{this.state.show16 && (
 									<div className="cd-faq-content::after">
 										<p style={customStyles}>
-											Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-											Blanditiis provident officiis, reprehenderit numquam.
-											Praesentium veritatis eos tenetur magni debitis inventore
-											fugit, magnam, reiciendis, saepe obcaecati ex vero quaerat
-											distinctio velit.
+											Once you enter all the symptoms , a button "see results" will appear
+											when you click on that you can see illness predicted and remedies for same.
 										</p>
 									</div>
 								)}
