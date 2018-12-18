@@ -42,3 +42,15 @@ export async function validateUserAPI (params) {
     })
     return response.data
   }
+
+
+  export async function sendMessage (data) {
+    const response = await api.request({
+      method: 'post',
+      baseURL: api.baseURL,
+      url: '/api/user/sendMessage/',
+      data: data,
+      headers: { 'Content-Type': 'application/json; charset=utf-8' }
+    })
+    return response.data
+  }

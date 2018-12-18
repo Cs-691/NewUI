@@ -3,6 +3,7 @@ import { Glyphicon, Button } from 'react-bootstrap';
 
 import NavigationBar from '../../../Components/NavigationBar';
 import { PageHeader, Grid, Row } from 'react-bootstrap';
+import { sendMessage} from '../../../api/UserOpreations';
 
 
 
@@ -22,18 +23,26 @@ class ContactPage extends Component {
     }
     sendEmail() {
         console.log(this.state);
-/*
-        var link = "mailto:nrvshah06@gmail.com"
-             + "&subject=" + escape(this.state.subject)
-             + "&body=" + escape(this.state.message)+ "\n Company   "+escape(this.state.company)
-             + "\n from:"+this.state.name+" "+this.state.email;
-    ;
-*/
-var link = "mailto:me@example.com"
-             + "&subject=" + escape("This is my subject")
-             + "&body=" + escape("aa")
+
+var sub=this.state.subject
+var company=this.state.company
+var message=this.state.message
+var from="From: "+this.state.name+"\n"+this.state.email+"\n"+company;
+var meesage1 = "Subject:"+sub+"\nMessage:"+message+"\n"+from;
+   
     ;
    // window.location.href = link;
+
+   sendMessage(JSON.stringify(meesage1))
+            .then(data => {
+
+               alert(data);
+            })
+            .catch((err) => {
+                console.log(err);
+                alert("Soemthing went wrong!")
+            })
+
 
     }
     handleChange(event) {
