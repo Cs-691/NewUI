@@ -1,0 +1,23 @@
+.info-header {
+    margin: 10px 0 20px 0;
+    text-align: center;
+    font-size: 12pt;
+  }
+
+.form-input{
+    border-radius: 20px;
+    height: 35px;
+    text-align: center;
+    width: 550px;
+    margin: 10px;
+}
+
+.form-button{
+    height: 40px;
+    margin-right: 5px;
+    border-radius: 20px;
+    width: 150px;
+    margin: 0 10px 0 0;
+    background-color: #29b1c2;
+}
+

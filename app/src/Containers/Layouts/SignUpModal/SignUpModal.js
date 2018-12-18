@@ -1,6 +1,7 @@
 import React from "react";
 import { Modal, Button } from 'react-bootstrap';
 
+import "./signup.css";
 
 //Modal.setAppElement('#root')
 class SignUpModal extends React.Component {
@@ -83,22 +84,22 @@ alert("password should match!")
                     <Modal.Body>
 
 
-                        <div>Enter the following Information</div>
+                        <div class="info-header">Enter the following Information</div>
 
 
                         <label>
                             First Name:
-                <input type="text" name="fname" onChange={this.handleChange} value={this.state.fname} />
+                <input  class=" center form-control form-input" type="text" name="fname" onChange={this.handleChange} value={this.state.fname} />
                         </label>
 
                         <label>
                             Last Name:
-                <input type="text" name="lname" onChange={this.handleChange} value={this.state.lname} />
+                <input class=" center form-control form-input" type="text" name="lname" onChange={this.handleChange} value={this.state.lname} />
                         </label>
 
                         <label>
                             Gender:
-<select name="gender" onChange={this.handleChange} value={this.state.gender}>
+<select class=" center form-control form-input" name="gender" onChange={this.handleChange} value={this.state.gender}>
 
                                 <option value="male">Male</option>
                                 <option value="female">Female</option>
@@ -109,29 +110,29 @@ alert("password should match!")
                         <label>
 
                             Age:
-                <input type="number" name="age" onChange={this.handleChange} value={this.state.age} />
+                <input class=" center form-control form-input" type="number" name="age" onChange={this.handleChange} value={this.state.age} />
                         </label>
 
                         <label>
 
                             Email:
-                <input type="email" name="email" onChange={this.handleChange} value={this.state.email} />
+                <input class=" center form-control form-input" type="email" name="email" onChange={this.handleChange} value={this.state.email} />
                         </label>
                         <br></br>
                         <label>
                             Password:
-                <input type="password" name="password" onChange={this.handleChange} value={this.state.password} />
+                <input class=" center form-control form-input" type="password" name="password" onChange={this.handleChange} value={this.state.password} />
                         </label>
 
                         <label>
                             Confirm Password:
-                <input type="password" name="cpassword" onChange={this.handleChange} value={this.state.cpassword} />
+                <input class=" center form-control form-input" type="password" name="cpassword" onChange={this.handleChange} value={this.state.cpassword} />
                         </label>
                         <br></br>
 
                         <label>
                             Smoking habits:
-<select name="smoke" onChange={this.handleChange} value={this.state.smoke}>
+<select class=" center form-control form-input" name="smoke" onChange={this.handleChange} value={this.state.smoke}>
                                 <option value="NO">No</option>
                                 <option value="YES">Yes</option>
 
@@ -142,7 +143,7 @@ alert("password should match!")
 
                         <label>
                             Blood Pressure:
-<select name="bloodPressure" onChange={this.handleChange} value={this.state.bloodPressure}>
+<select  class=" center form-control form-input"name="bloodPressure" onChange={this.handleChange} value={this.state.bloodPressure}>
                                 <option value="NO">No</option>
                                 <option value="YES">Yes</option>
 
@@ -153,17 +154,16 @@ alert("password should match!")
 
                         <label>
                             diabetes:
-<select name="diabetes" onChange={this.handleChange} value={this.state.diabetes}>
+<select class=" center form-control form-input" name="diabetes" onChange={this.handleChange} value={this.state.diabetes}>
                                 <option value="NO">No</option>
                                 <option value="YES">Yes</option>
 
                             </select>
                         </label>
 
-
                         <br></br>
-                        <input type="submit" disabled={!this.handleValidation()} value="Sign Up" onClick={this.handleSubmit} />
-                        <input type="reset" value="Clear" onClick={this.clearData} />
+                        <input  class="form-button" type="submit" disabled={!this.handleValidation()} value="Sign Up" onClick={this.handleSubmit} />
+                        <input  class="form-button" type="reset" value="Clear" onClick={this.clearData} />
                     </Modal.Body>
                     <Modal.Footer>
                         <Button onClick={this.closeModal}>Close</Button>
