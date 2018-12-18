@@ -5,6 +5,7 @@ import NavigationBar from '../../../Components/NavigationBar';
 import { PageHeader, Grid, Row } from 'react-bootstrap';
 import { sendMessage} from '../../../api/UserOpreations';
 
+import "./contacts-style.css";
 
 
 class ContactPage extends Component {
@@ -150,25 +151,21 @@ var meesage1 = "Subject:"+sub+"\nMessage:"+message+"\n"+from;
                                 <li> <Button>
                                     <Glyphicon glyph="map-marker" />
                                 </Button>
-                                    <p>Manhatten, NY ,10013 USA</p>
+                                    <p class="info-lable">Manhatten, NY ,10013 USA</p>
                                 </li>
 
                                 <li>
                                     <Button>
                                         <Glyphicon glyph="earphone" />
                                     </Button>
-                                    <p>+ 01 234 567 89</p>
+                                    <p class="info-lable">+ 01 234 567 89</p>
                                 </li>
 
                                 <li>
                                     <Button>
                                         <Glyphicon glyph="envelope" />
                                     </Button><br></br>
-                                    <a 
-                                    style={{
-                                        color: 'black',
-                                       
-                                      }}
+                                    <a class="info-lable"
                                     href="mailto:ids@gmail.com" targ="blank">IDS@gmail.com</a>
 
                                 </li>

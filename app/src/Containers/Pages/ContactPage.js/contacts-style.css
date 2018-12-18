@@ -1,0 +1,42 @@
+
+
+.container-fluid{
+    background-color: #eee;
+}
+
+.heading{
+    font-size: 13pt;
+    margin: 0px 0 40px 0;
+    color: #666;
+}
+
+.form-styling{
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    color: #fff;
+}
+
+.lable{
+    font-size: 10pt;
+    color: #666;
+}
+
+.btn{
+    border-radius: 20px;
+}
+
+.send-btn{
+    height: 40px;
+    margin-top: 15px;
+    width: 120px;
+    border-radius: 20px;
+}
+
+.info-lable{
+    color: #888888;
+    font-size: 11pt;
+}
+
