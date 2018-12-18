@@ -1,6 +1,7 @@
 import React from "react";
 import {Modal,Button} from 'react-bootstrap';
 
+import "./login.css";
 
 //Modal.setAppElement('#root')
 class LoginModal extends React.Component {
@@ -19,7 +20,7 @@ class LoginModal extends React.Component {
 
 
         this.handleValidation = this.handleValidation.bind(this);
-        
+
 
     }
 
@@ -40,7 +41,7 @@ class LoginModal extends React.Component {
         let data =this.state;
         this.props.callback(data);
     }
-    handleValidation()
+    handleValidation() 
     {
         //make sure all the properties are non empty
         const valid = (this.state.email !== ''  && this.state.password !== '');
@@ -61,33 +62,29 @@ class LoginModal extends React.Component {
         });
     }
     render() {
-       
+
         return (
             <div id="modalContainer">
-               <Modal show="true" onHide={this.closeModal}>
-            <Modal.Header closeButton>
-            <Modal.Title>Log In </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-                    <div>Enter the following Information</div>
-                   
-                    <label>
-                            Email:
-                <input  type="email" name="email" onChange={this.handleChange} value={this.state.email} />
-                        </label>
-                        <br></br>
-                        <label>
-                            Password:
-                <input  type="password" name="password" onChange={this.handleChange}  value={this.state.password}/>
-                        </label>
+                <Modal class="modal-body" show="true" onHide={this.closeModal}>
+                    <Modal.Header closeButton class="modal-title">
+                        <Modal.Title >Log In </Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <div class="info-header">Enter the following Information</div>
 
-                      <br></br>
-                        <input type="submit" disabled={!this.handleValidation()} value="Submit" onClick={this.handleSubmit}/>
-                        <input type="reset" value="Reset" onClick={this.clearData} />
-                        </Modal.Body>
-                    <Modal.Footer>
-            <Button onClick={this.closeModal}>Close</Button>
-          </Modal.Footer>
+                        <input placeholder="abc@gmail.com" type="email" name="email" onChange={this.handleChange} value={this.state.email} class=" form-control form-input" />
+
+                        <br></br>
+
+                        <input placeholder="Password" type="password" name="password" onChange={this.handleChange} value={this.state.password} className="form-control form-input" />
+
+                        <br></br>
+                        <input type="submit" disabled={!this.handleValidation()} value="Submit" onClick={this.handleSubmit} className="button" />
+                        <input type="reset" value="Reset" onClick={this.clearData} class="button" />
+                    </Modal.Body>
+                    <Modal.Footer class="modal-footer">
+                        <Button onClick={this.closeModal} class="button">Close</Button>
+                    </Modal.Footer>
                 </Modal>
 
             </div>
