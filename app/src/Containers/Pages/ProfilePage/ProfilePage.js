@@ -63,6 +63,9 @@ class ProfilePage extends Component {
                 this.setState({ email: data.email });
                 this.setState({ gender: data.gender });
                 this.setState({ password: data.password });
+                this.setState({ smoke: data.smoke });
+                this.setState({ diabetes: data.diabetes });
+                this.setState({ bloodPressure: data.bloodPressure });
                 console.log(data);
                 //goto profile page
             })
@@ -136,6 +139,39 @@ class ProfilePage extends Component {
                     New Password:
                 <input type="password" name="npassword" onChange={this.handleChange} value={this.state.npassword} />
                 </label>
+                <br/><br/>
+
+                <label>
+                            Smoking habits:
+<select name="smoke" onChange={this.handleChange} value={this.state.smoke}>
+                                <option value="NO">No</option>
+                                <option value="YES">Yes</option>
+
+                            </select>
+                        </label>
+
+                        <br></br>
+
+                        <label>
+                            Blood Pressure:
+<select name="bloodPressure" onChange={this.handleChange} value={this.state.bloodPressure}>
+                                <option value="NO">No</option>
+                                <option value="YES">Yes</option>
+
+                            </select>
+                        </label>
+
+                        <br></br>
+
+                        <label>
+                            diabetes:
+<select name="diabetes" onChange={this.handleChange} value={this.state.diabetes}>
+                                <option value="NO">No</option>
+                                <option value="YES">Yes</option>
+
+                            </select>
+                        </label>
+
 
 
 <br/><br/>

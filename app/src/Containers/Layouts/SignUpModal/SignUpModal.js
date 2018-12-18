@@ -7,7 +7,8 @@ class SignUpModal extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = { fname: '', lname: '', email: '', gender: 'male', password: '', cpassword: '', age: '' }
+        this.state = { fname: '', lname: '', email: '', gender: 'male', password: '', cpassword: '', 
+        age: '',diabetes:'NO',smoke:'NO',bloodPressure:'NO' }
         // preserve the initial state in a new object
         this.baseState = this.state;
 
@@ -131,8 +132,8 @@ alert("password should match!")
                         <label>
                             Smoking habits:
 <select name="smoke" onChange={this.handleChange} value={this.state.smoke}>
-                                <option value="no">No</option>
-                                <option value="yes">Yes</option>
+                                <option value="NO">No</option>
+                                <option value="YES">Yes</option>
 
                             </select>
                         </label>
@@ -140,10 +141,10 @@ alert("password should match!")
                         <br></br>
 
                         <label>
-                            Smoking habits:
-<select name="smoke" onChange={this.handleChange} value={this.state.smoke}>
-                                <option value="no">No</option>
-                                <option value="yes">Yes</option>
+                            Blood Pressure:
+<select name="bloodPressure" onChange={this.handleChange} value={this.state.bloodPressure}>
+                                <option value="NO">No</option>
+                                <option value="YES">Yes</option>
 
                             </select>
                         </label>
@@ -153,8 +154,8 @@ alert("password should match!")
                         <label>
                             diabetes:
 <select name="diabetes" onChange={this.handleChange} value={this.state.diabetes}>
-                                <option value="no">No</option>
-                                <option value="yes">Yes</option>
+                                <option value="NO">No</option>
+                                <option value="YES">Yes</option>
 
                             </select>
                         </label>
