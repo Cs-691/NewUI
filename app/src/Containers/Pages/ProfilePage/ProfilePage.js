@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { getUserAPI ,updateAPI} from '../../../api/UserOpreations';
 import NavigationBar from '../../../Components/NavigationBar';
-
-
+import "./profile.css";
 class ProfilePage extends Component {
     constructor(props) {
         super(props);
@@ -98,17 +97,17 @@ class ProfilePage extends Component {
             <div>
 <NavigationBar></NavigationBar>
                 <label>
-                    First Name:
-                <input type="text" name="fname" onChange={this.handleChange} value={this.state.fname} />
+                <span className="form-lables">  First Name:</span>
+                <input   type="text" name="fname" onChange={this.handleChange} value={this.state.fname} />
                 </label>
 <br/><br/>
                 <label>
-                    Last Name:
+                <span className="form-lables">  Last Name:</span>
                 <input type="text" name="lname" onChange={this.handleChange} value={this.state.lname} />
                 </label>
                 <br/><br/>
                 <label>
-                    Gender:
+                <span className="form-lables">Gender:</span>
 <select name="gender" onChange={this.handleChange} value={this.state.gender}>
 
                         <option value="male">Male</option>
@@ -119,30 +118,30 @@ class ProfilePage extends Component {
                 <br/><br/>
                 <label>
 
-                    Age:
+                <span className="form-lables"> Age:</span>
                 <input type="number" name="age" onChange={this.handleChange} value={this.state.age} />
                 </label>
                 <br/><br/>
                 <label>
 
-                    Email:
+                <span className="form-lables"> Email:</span>
                 <input type="email" name="email" readOnly value={this.state.email} />
                 </label>
 
 <br/><br/>
                 <label>
-                    Current Password:
+                <span className="form-lables">   Current Password:</span>
                 <input type="password" name="password" onChange={this.handleChange} value={this.state.password} />
                 </label>
                 <br/><br/>
                 <label>
-                    New Password:
+                <span className="form-lables">  New Password:</span>
                 <input type="password" name="npassword" onChange={this.handleChange} value={this.state.npassword} />
                 </label>
                 <br/><br/>
 
                 <label>
-                            Smoking habits:
+                <span className="form-lables">  Smoking habits:</span>
 <select name="smoke" onChange={this.handleChange} value={this.state.smoke}>
                                 <option value="NO">No</option>
                                 <option value="YES">Yes</option>
@@ -151,9 +150,9 @@ class ProfilePage extends Component {
                         </label>
 
                         <br></br>
-
+                        <br></br>
                         <label>
-                            Blood Pressure:
+                        <span className="form-lables">  Blood Pressure:</span>
 <select name="bloodPressure" onChange={this.handleChange} value={this.state.bloodPressure}>
                                 <option value="NO">No</option>
                                 <option value="YES">Yes</option>
@@ -162,9 +161,10 @@ class ProfilePage extends Component {
                         </label>
 
                         <br></br>
+                        <br></br>
 
                         <label>
-                            diabetes:
+                        <span className="form-lables">     Diabetes:</span>
 <select name="diabetes" onChange={this.handleChange} value={this.state.diabetes}>
                                 <option value="NO">No</option>
                                 <option value="YES">Yes</option>

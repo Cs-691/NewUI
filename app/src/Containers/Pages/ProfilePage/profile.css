@@ -1,0 +1,19 @@
+.fluid-container{
+    background-color: #eee;
+}
+
+.form-input{
+    height: 40px;
+    border-radius: 20px;
+}
+
+.form-lables{
+    font-size: 11pt;
+}
+
+.form-button{
+    border-radius: 20px;
+    height: 35px;
+    width: 150px;
+    background-color: #29b1c2;
+}
