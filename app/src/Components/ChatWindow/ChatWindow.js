@@ -87,7 +87,13 @@ class ChatWindow extends Component {
     
   }
 
-  handleNewUserMessage(newMessage) {
+  handleNewUserMessage(newMessage) 
+  {
+    newMessage=newMessage.toLowerCase()
+    newMessage=newMessage.split("have").pop().trim();
+    newMessage=newMessage .replace(/ /g,"_");
+    //alert(newMessage)
+    
     i++;
     if (document.getElementById('no-more-symptom') == null) {
 
@@ -137,6 +143,7 @@ class ChatWindow extends Component {
     this.setState({ userSymptoms: currenSumptoms});
     this.setState({ value: ''});
     
+    
   }
 
   handleOnClickfromSuggestion(text)
@@ -149,7 +156,6 @@ class ChatWindow extends Component {
       
 
     }
-    
     
   }
 
