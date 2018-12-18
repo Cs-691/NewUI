@@ -175,7 +175,7 @@ class ProfilePage extends Component {
 
 
 <br/><br/>
-                <input type="submit" disabled={!this.handleValidation()} value="Update" onClick={this.updateUser} />
+                <input  className="form-button"  type="submit" disabled={!this.handleValidation()} value="Update" onClick={this.updateUser} />
 
 
             </div>
