@@ -57,14 +57,14 @@ class ChatWindow extends Component {
 
   componentDidMount() {
 
-    addResponseMessage("Welcome to this illness prediction system!");
-    addResponseMessage("Lets get started,what is your name?");
+    addResponseMessage("Welcome to our Illness Prediction System!");
+    addResponseMessage("Let's get started, what is your name?");
   }
   sendSymptomsToBackEnd() {
     let backendInput=this.state.userSymptoms;
    
     
-    alert("your symptom will go to our system:"+backendInput);
+    //alert("your symptoms will go to our system:"+backendInput);
 
    
 
@@ -74,7 +74,7 @@ class ChatWindow extends Component {
       getChatResponse(backendInput)
       .then(data => {
         console.log(data);
-        alert("Processing done!click on see results button!")
+        alert("Processing done! Click on 'see results' button!")
            this.props.foundResult(data);
       
       })
@@ -101,7 +101,7 @@ class ChatWindow extends Component {
 
       //create button dynamically.
       var button = document.createElement("button");
-      button.innerHTML = "No more symptom";
+      button.innerHTML = "No more symptoms";
       button.id = "no-more-symptom"
       button.style.cssText = 'background-color: rgb(163, 234, 247); border-radius: 5px;  text-align: left; height: auto;';
       parentNode.appendChild(button);
@@ -127,18 +127,18 @@ class ChatWindow extends Component {
    
 
     if(i==1){
-    addResponseMessage("let us know name of the any  symptom you are experiencing ")
+    addResponseMessage("What symptoms are you experiencing?")
     }
     else if(i%2===1)
     {
      
-      addResponseMessage("do you have any other symptom?")
+      addResponseMessage("Are you experiencing any other symptom?")
     }
     else
     {
       newMessage=newMessage.trim().toLowerCase();
       currenSumptoms.push(newMessage) ;
-      addResponseMessage("from how many days how you are experiencing this?")
+      addResponseMessage("How many days have you been experiencing this?")
     }
     this.setState({ userSymptoms: currenSumptoms});
     this.setState({ value: ''});
@@ -182,7 +182,7 @@ class ChatWindow extends Component {
 
         <Chat handleNewUserMessage={this.handleNewUserMessage}
           showCloseButton={true}
-          title={"Illness Predictior"}
+          title={"Illness Predictor"}
           senderPlaceHolder={"Type a message...."}
         // fullScreenMode={this.state.fullScreenModeActive}
 
